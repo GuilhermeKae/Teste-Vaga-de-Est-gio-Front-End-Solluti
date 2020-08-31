@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="Guilherme Kae" />
+	<meta name="description" content="Teste Vaga de Estágio" />
+	<meta name="viewport" content="width=device,initial-scale=1.0,maximum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+	<title>Login Microcamp</title>
+	<script type="text/javascript">
+		function validar() {
+			var email = formuser.email.value;
+			var senha = formuser.senha.value;
+			var erro = false
+
+			if (email == "" || email.indexOf('@') == -1) {
+				alert('Preencha o Campo E-mail.')
+				formuser.email.focus();
+				var erro = false
+				return false
+				
+			}
+			if (senha == "" || senha.length != 6) {
+				alert('Preencha o Campo Senha Com no Maximo 6 Caracteres')
+				formuser.senha.focus();
+				var erro = false
+				return false
+			}
+
+			if(erro){
+				return false
+			}else{
+				alert('Parabèns você está LOGADO')
+				return true
+			}
+		}
+	</script>
+
+</head>
+
+<body>
+
+	<div class="header">
+		<div class="center">
+			<div class="imagem">
+			<img src="imagens/microcamp4.png" />
+			</div>	
+		</div><!--center-->
+	</div><!--header-->
+		<div class="container-banner">
+			<div class="center">
+	
+				<div class="container-list">
+			<ul>
+				<li>MISSÃO
+				Promover educação tecnológica em nível avançado, desenvolvendo competências técnicas e comportamentais em nossos alunos para alcançar sucesso pessoal e profissional.</li>
+				<li>VISÃO
+				Em 2023 ser a escolha preferida em educação tecnológica em nível nacional.</li>
+				<li>VALORES:
+				Lealdade
+				Resiliência
+				Inovação
+				Racionalidade
+				Integridade
+				Cooperação
+				Atitude</li>
+			</ul>
+		</div><!--container-list-->
+				
+		<div class="form_identification">
+			<p>Painel do Candidato</p>
+				<form name="formuser" action="enviar.php" method="POST">
+					<div class="container-input">
+						<span>E-mail    </span>
+						<i class="fas fa-user"></i><input type="text" name="email" />
+					</div><!--container-input-->
+
+					<div class="container-input">
+						<span>Senha    </span>
+						<i class="fas fa-lock"></i><input type="password" name="senha" />
+					</div><!--container-input-->
+
+					<div class="container-input-submit">
+						<input type="submit" name="login" value="Acessar" onclick="return validar()" />
+					</div><!--container-input-->
+				</form>
+		</div><!--form-->
+				<div class="clear"></div>
+			</div><!--center-->
+		</div><!--container-banner-->
+
+</body>
+
+</html>
